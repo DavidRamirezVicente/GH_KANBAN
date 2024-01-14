@@ -5,11 +5,11 @@ Primero de todos debemos configurar nuestro manifest y el gradle para que nuestr
 En el gradle añadimos las dependencias para Glide (librería para cargar imagenes) y Gson para recibir datos JSON y guardar localmente.
 
 Layouts.xml:
-Ya que para listar los repositorios necesitaremos un recyclerView, para cada pagina, he creado la vista de esa actividad y otra con el Item que se mostrara en esta lista.
+Ya que para listar los repositorios necesitaremos un recyclerView, para cada página, he creado la vista de esa actividad y otra con el Item que se mostrará en esta lista.
 
 La página principal está formada por un ToolBar con el título del proyecto. Debajo tenemos dos botones, Explore y Local donde posteriormente los utilizaremos para cambiar entre actividades.
 Y por último el recyclerView.
-Para la vista de su Item, crearemos dos TextViews, uno para el nombre y otro para el autor. A la derecha ponemos un Imagview con el simbolo + (Layout -> new -> Vector Asset)
+Para la vista de su Item, crearemos dos TextViews, uno para el nombre y otro para el autor. A la derecha ponemos un Imagview con el símbolo + (Layout -> new -> Vector Asset)
 Para la vista Local será exactamente lo mismo pero con un icono de una papelera para eliminar el repositorio.
 Para las vistas de Backlog, Next, Doing y Done. Se hace igual que las anteriores, pero ponemos los textView de Issue: (Nombre del error), Date:, Comments: , IssueNumber: , en el toolbar cambiamos el título y el número de página. En el Item lo que varia es que en Backlog el imageView tiene solo este icono “->”, en Next “->” “<-”,  Doing “->” “<-”,  Done “<-”.
 Con estas flechas podremos mover un Issue a la siguiente vista o eliminarlo.
@@ -18,21 +18,19 @@ Actividades:
 Repository
 Creamos una clase Repository donde inicializamos las variables name y author. Creamos constructores, getters y setters.
 Adaptery:
-Creamos la clase Adaptery que será el responsable de proporcionar los datos y crear las vistas para cada elemento en el RecyclerView.
+Creamos la clase Adaptery que será la responsable de proporcionar los datos y crear las vistas para cada elemento en el RecyclerView.
 
 
 Atributos:
 Context:En este caso, mContext se utiliza para cargar imágenes con Glide, iniciar una actividad al hacer clic en un elemento, y otras operaciones relacionadas con la interfaz de usuario. 
-mData: La variable mData es una lista que contiene objetos de la clase MovieModelClass. Esta lista representa los datos que se mostrarán en el RecyclerView.
+rData: La variable mData es una lista que contiene objetos de la clase Repository. Esta lista representa los datos que se mostrarán en el RecyclerView.
 El método onCreateViewHolder se utiliza para representar y mantener las vistas de cada elemento en el RecyclerView,
 onBindViewHolder es un método que se llama cuando se necesita mostrar datos en una vista específica.
-Cuando el RecyclerView necesita mostrar un nuevo elemento (o actualizar uno existente debido a desplazamiento), invoca este método y pasa la posición del elemento que debe mostrarse y el holder que contiene las vistas ya infladas.Esto permite que RecyclerView recicle y reutilice las vistas.
-Tambíen contiene un Intent para coger los datos del repositorio y pasarlo a la actividad Local.
+Cuando el RecyclerView necesita mostrar un nuevo elemento (o actualizar uno existente debido a desplazamiento), invoca este método y pasa la posición del elemento que debe mostrarse y el holder que contiene las vistas ya infladas. Esto permite que RecyclerView recicle y reutilice las vistas.
+También contiene un Intent para coger los datos del repositorio y pasarlo a la actividad Local.
 MyViewHolder se utiliza para representar y mantener las vistas de cada elemento en el RecyclerView,
 
 MainActivity:
-Esta clase `MainActivity` es una actividad en Android que representa la pantalla principal de tu aplicación. Aquí hay una documentación resumida de la funcionalidad de la clase:
-
 Atributos:
    - RecyclerView repoRecyclerView: Representa la lista de repositorios.
    - Adaptery adaptery: Adaptador personalizado para mostrar la lista de repositorios.
@@ -47,7 +45,9 @@ Constantes:
 
 Métodos principales:
    - onCreate(Bundle savedInstanceState): Se llama cuando la actividad se crea. Inicializa la interfaz de usuario, carga datos y configura listeners.
-   - `loadData()`: Carga los datos de la API de GitHub utilizando una tarea asíncrona, previamente comprobamos si ya tenemos datos guardados para no volver ha hacer una llamada a la api. Aquí creamos un intent para que cuando pulsemos el botón de local vayamos a la actividad Local
+   - `loadData()`: Carga los datos de la API de GitHub utilizando una tarea asíncrona, previamente comprobamos si ya tenemos datos guardados para no volver ha hacer una llamada a la api. Aquí creamos un intent para que cuando pulsemos el botón de local vayamos a la actividad Local.
+
+
    - loadStoredData(): Recupera datos almacenados localmente y los carga en la lista de repositorios.
    - parseStoredData(String storedData): Convierte una cadena JSON almacenada en preferencias compartidas en una lista de objetos Repository.
    - `saveDataLocally(List<Repository> repositories): Guarda la lista de repositorios en preferencias compartidas en formato JSON.
