@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/grey"
+        android:titleTextColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name"
+        app:titleMarginBottom="0dp"
+        app:titleMarginEnd="16dp"
+        app:titleMarginStart="125dp"
+        app:titleMarginTop="0dp"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Display1">
+    </androidx.appcompat.widget.Toolbar>
+
+    <Button
+        android:id="@+id/explore"
+        android:layout_width="203dp"
+        android:layout_height="66dp"
+        android:backgroundTint="@color/dark_grey"
+        android:text="Explore"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:cornerRadius="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <Button
+        android:id="@+id/local"
+        android:layout_width="203dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="@color/grey"
+        android:text="Local"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/repoRecyclerView"
+        android:layout_width="409dp"
+        android:layout_height="647dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

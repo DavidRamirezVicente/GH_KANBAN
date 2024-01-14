@@ -1,0 +1,32 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <!-- Estado cuando el botón está presionado -->
+        <shape>
+            <solid android:color="@color/dark_grey" />
+            <corners android:radius="0dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@android:color/black" />
+        </shape>
+    </item>
+    <item android:state_enabled="false">
+        <!-- Estado cuando el botón está desactivado -->
+        <shape>
+            <solid android:color="@color/grey" />
+            <corners android:radius="0dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@android:color/black" />
+        </shape>
+    </item>
+    <item>
+        <!-- Estado predeterminado (sin presionar ni desactivado) -->
+        <shape>
+            <solid android:color="@color/dark_grey" />
+            <corners android:radius="0dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@android:color/black" />
+        </shape>
+    </item>
+</selector>

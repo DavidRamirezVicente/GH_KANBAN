@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GH Kanban</string>
+    <string-array name="activity_options">
+        <item>Home</item>
+        <item>Backlog</item>
+        <item>Next</item>
+        <item>Doing</item>
+        <item>Done</item>
+    </string-array>
+
+
+</resources>
