@@ -22,7 +22,7 @@ Creamos la clase Adaptery que será la responsable de proporcionar los datos y c
 
 
 Atributos:
-Context:En este caso, mContext se utiliza para cargar imágenes con Glide, iniciar una actividad al hacer clic en un elemento, y otras operaciones relacionadas con la interfaz de usuario. 
+Context:En este caso, rContext se utiliza para cargar imágenes con Glide, iniciar una actividad al hacer clic en un elemento, y otras operaciones relacionadas con la interfaz de usuario. 
 rData: La variable mData es una lista que contiene objetos de la clase Repository. Esta lista representa los datos que se mostrarán en el RecyclerView.
 El método onCreateViewHolder se utiliza para representar y mantener las vistas de cada elemento en el RecyclerView,
 onBindViewHolder es un método que se llama cuando se necesita mostrar datos en una vista específica.
