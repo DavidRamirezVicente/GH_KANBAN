@@ -93,7 +93,6 @@ public class NextAdapter extends RecyclerView.Adapter<NextAdapter.LocalViewHolde
         }
     }
 
-    // Método para eliminar el repositorio
     public void removeIssue(int position) {
         try {
             nData.remove(position);

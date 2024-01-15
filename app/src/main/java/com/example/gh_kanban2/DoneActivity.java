@@ -51,7 +51,6 @@ public class DoneActivity extends AppCompatActivity {
         String issueNumber = intent.getStringExtra("number");
         String issueComments = intent.getStringExtra("comments");
 
-        // Crea un nuevo objeto Issue
         Issue nextView = new Issue();
         nextView.setIssue(issue);
         nextView.setIssueDate(issueDate);

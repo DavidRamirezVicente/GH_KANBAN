@@ -63,7 +63,6 @@ public class LocalActivity extends AppCompatActivity {
         localAdapter.setOnItemClickListener(new LocalAdaptery.OnItemClickListener() {
             @Override
             public void onItemClick(int position, String repoName, String repoAuthor) {
-                // Inicia BacklogActivity y pasa el nombre y el autor del repositorio seleccionado
                 Intent intent = new Intent(LocalActivity.this, BacklogActivity.class);
                 intent.putExtra("repoName", repoName);
                 intent.putExtra("repoAuthor", repoAuthor);

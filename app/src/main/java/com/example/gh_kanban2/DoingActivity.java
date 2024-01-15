@@ -37,11 +37,8 @@ public class DoingActivity extends AppCompatActivity {
         doingRecyclerView = findViewById(R.id.doingRecyclerView);
         doingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         doingRecyclerView.setAdapter(doingAdapter);
-        // Recibe los datos del intent
-
 
         if (savedInstanceState != null) {
-            // Restaura los datos del estado previamente guardados
             doingList = (ArrayList<Issue>) savedInstanceState.getSerializable("doingList");
         } else {
             doingList = loadLocalData();
@@ -52,7 +49,6 @@ public class DoingActivity extends AppCompatActivity {
         String issueNumber = intent.getStringExtra("number");
         String issueComments = intent.getStringExtra("comments");
 
-        // Crea un nuevo objeto Issue
         Issue nextView = new Issue();
         nextView.setIssue(issue);
         nextView.setIssueDate(issueDate);
@@ -79,7 +75,6 @@ public class DoingActivity extends AppCompatActivity {
         editor.apply();
     }
     private ArrayList<Issue> loadLocalData() {
-        // Cargar datos almacenados localmente usando Gson
         SharedPreferences sharedPreferences = getSharedPreferences("localDoingData", Context.MODE_PRIVATE);
         String json = sharedPreferences.getString("localDoingData", "");
 
@@ -93,7 +88,6 @@ public class DoingActivity extends AppCompatActivity {
     }
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        // Guarda los datos importantes en el Bundle antes de que la actividad sea destruida
         outState.putSerializable("doingList", doingList);
         super.onSaveInstanceState(outState);
     }
