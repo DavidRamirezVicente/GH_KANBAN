@@ -1,7 +1,7 @@
 GH KANBAN 
 DOCUMENTACIÓN
 Iniciamos un Empty Project.
-Primero de todos debemos configurar nuestro manifest y el gradle para que nuestra aplicación funcione.
+Primero de todos debemos configurar nuestro manifest y el gradle para que nuestra aplicación funcione. En el manifest damos permisos para acceder a internet.
 En el gradle añadimos las dependencias para Glide (librería para cargar imagenes) y Gson para recibir datos JSON y guardar localmente.
 
 Layouts.xml:
@@ -71,7 +71,6 @@ También tenemos un método click para que cuando pulsemos el nombre del reposit
 
 LocalActivity:
 Casi misma funcionalidad que las clase Main pero no hacemos llamada a la API, y creamos un nuevo método y evento:
-
 
 addRepositoryToLocalRecyclerView(Repository repository): Agrega un nuevo repositorio a la lista local, actualiza el adaptador y guarda los cambios localmente.
 
