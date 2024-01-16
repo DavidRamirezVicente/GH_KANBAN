@@ -1,6 +1,6 @@
 GH KANBAN 
 DOCUMENTACIÓN
-Iniciamos un Empty Project.
+Iniciamos un Empty Activity.
 Primero de todos debemos configurar nuestro manifest y el gradle para que nuestra aplicación funcione. En el manifest damos permisos para acceder a internet.
 En el gradle añadimos las dependencias para Glide (librería para cargar imagenes) y Gson para recibir datos JSON y guardar localmente.
 
